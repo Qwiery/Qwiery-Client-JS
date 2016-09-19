@@ -1,83 +1,8 @@
 /*
- + authentication
- |
- + connectLocal
- + registerLocal
- + connectFacebook
- + connectGoogle
- + changeUsername
-
- + files
- |
- + upload
- + all
- + images
- + images
- + entity
- + random
- + all
-
- + lexic
- |
- + question
- + upsert
- + delete
- + random
- + exists
-
- + profile
- |
- + topics
- + personalizations
- + psy
- + personality
- + trail
- + user
- + stats
- + history
- + get
-
- + tags
- |
- + agenda
- + tasks
- + addresses
- + people
- + thoughts
- + all
- + favorites
- + all
- + add
- + remove
- + contains
-
- + search
- |
- + web
- + graph
- + alpha
- + news
- + wikipedia
-
- + graph
- |
- + search
- + entity
- + upsert
- + get
- + related
- + delete
- + link
- + unlink
- + entities
- |
- + recent
-
- + admin
- |
- + getAllUsers
-
- * */
+* Qwiery JS SDK, v2016.9.19, Monday September 19th, 2016.
+* http://www.qwiery.com
+* Copyright 2016, Qwiery by Orbifold Consulting (http://www.orbifold.net)
+* */
 var Qwiery = {
     /*
      Set the API key to access your workspaces and data.

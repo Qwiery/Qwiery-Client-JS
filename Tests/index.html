@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Unit tests</title>
+    <script type="text/javascript" src="qunit.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="lodash.js"></script>
+    <script type="text/javascript" src="../Qwiery.js"></script>
+    <link rel="stylesheet" href="qunit.css"/>
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+<script type="text/javascript">
+    QUnit.extend(QUnit, {
+                contains: function(actual, substring, message) {
+                    var passes = actual.indexOf(substring) !== -1;
+                    QUnit.push(passes, actual, substring, message);
+                },
+                testSkip: function() {
+                    QUnit.test(arguments[0] + ' [SKIPPED]', function() {
+                        var li = document.getElementById(QUnit.config.current.id);
+                        QUnit.done(function() {
+                            if(li) {
+                                li.style.background = '#FFFF99';
+                            }
+                        });
+                        ok(true);
+                    });
+                }
+            }
+    );
+
+    /*
+    * Note that on the server you need to specify something like
+    *
+    * app.use(cors({credentials: true, origin: 'http://localhost:63342'}));
+    *
+    * via "npm install cors"
+    * */
+
+    /**
+     The API key to use when authenticating the webAPI call.
+     */
+    var apiKey = "Sharon";
+    Qwiery.apiKey = apiKey;
+    Qwiery.serviceURL = "http://localhost:4785";
+    ctx = {userId: "Sharon"};
+</script>
+
+<script src="Entities.js"></script>
+<script src="Graph.js"></script>
+<script src="Tags.js"></script>
+<script src="Profile.js"></script>
+<script src="Personalization.js"></script>
+<script src="Authentication.js"></script>
+<script src="Security.js"></script>
+<script src="Apps.js"></script>
+
+<script src="Files.js"></script>
+<script src="Lexic.js"></script>
+<script src="Mocks.js"></script>
+<script src="Qwiery.js"></script>
+
+<script src="Search.js"></script>
+
+</body>
+</html>
