@@ -25,7 +25,10 @@ To use your apiKey
 
     Qwiery.apiKey = "your secret key";
     
-You can obtain a key by registering or     
+You can obtain a key by registering and the key can be found as shown in the image below
+
+![apikeylocation](https://cloud.githubusercontent.com/assets/2377906/18625281/d6c3585e-7e4d-11e6-98c3-ae903e709356.png)
+     
 ---
 
 For more information, see the [Qwiery](http://www.qwiery.com) site.
