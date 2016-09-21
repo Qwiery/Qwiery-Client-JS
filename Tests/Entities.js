@@ -1,7 +1,7 @@
 ﻿QUnit.module("Entities" );
 asyncTest('Update an entity', function() {
     var product = {
-        UnitPrice: 30.78,
+        UnitPrice: 188.08,
         UnitsInStock: 95,
         Discontinued: false,
         DataType: "Product",
@@ -28,10 +28,11 @@ asyncTest('Upsert with just Title/Description gives a Thought', function() {
         Description: "The King"
     };
 
-    expect(1);
+    expect(2);
     Qwiery.upsertEntity(entity).then(function(id) {
         Qwiery.getEntity(id).then(function(data) {
-            ok(data.DataType === "Thought");
+            ok(Qwiery.isDefined(data));
+            ok(data && data.DataType === "Thought");
             start();
         });
     });

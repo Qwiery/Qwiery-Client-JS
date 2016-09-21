@@ -2,7 +2,7 @@
 
 asyncTest('No API key', function() {
     Qwiery.apiKey = undefined;
-    Qwiery.test()
+    Qwiery.ask("Whatever")
         .then(function(result) {
             ok(false, "Should not get here.");
             Qwiery.apiKey = "Sharon";
@@ -16,7 +16,7 @@ asyncTest('No API key', function() {
 
 asyncTest('Empty API key', function() {
     Qwiery.apiKey = "  ";
-    Qwiery.test()
+    Qwiery.ask("Anything you like")
         .then(function(result) {
             ok(false, "Should not get here.");
             Qwiery.apiKey = "Sharon";
@@ -30,7 +30,7 @@ asyncTest('Empty API key', function() {
 
 asyncTest('Unknown API key', function() {
     Qwiery.apiKey = "This is an unknown API key";
-    Qwiery.test()
+    Qwiery.ask("Laplacian of graphs, do you know it?")
         .then(function(result) {
             ok(false, "Should not get here.");
             Qwiery.apiKey = "Sharon";

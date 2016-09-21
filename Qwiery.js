@@ -98,10 +98,16 @@ var Qwiery = {
      * @param {Array} ids An array of identifiers.
      * @returns {}
      */
-    getEntities: function(ids) {
+    getEntities: function(obj) {
+        var data;
+        if(obj.ids) {
+            data = obj;
+        } else {
+            data = {"ids": obj};
+        }
         return $.ajax({
             url: Qwiery.serviceURL + '/graph/entity/getMany/',
-            data: JSON.stringify(ids),
+            data: JSON.stringify(data),
             contentType: "application/json;charset=utf-8",
             beforeSend: function(xhr) {
                 xhr.setRequestHeader("ApiKey", Qwiery.apiKey);
