@@ -166,7 +166,7 @@ asyncTest('New Facebook connect', function() {
         .then(function(newUser) {
             ok(Qwiery.isDefined(newUser.id));
             ok(Qwiery.isDefined(newUser.facebook));
-            ok(newUser.facebook.id === fo.id.toString());
+            ok(newUser.facebook.id.toString() === fo.id.toString());
             ok(newUser.facebook.name === fo.name);
             start();
         });
@@ -184,7 +184,7 @@ asyncTest('Facebook re-connect', function() {
         .then(function(newUser) {
             $.when(Qwiery.connectFacebook(fo))
                 .then(function(u) {
-                    ok(u.facebook.id === fo.id);
+                    ok(u.facebook.id.toString() === fo.id.toString());
                     ok(u.facebook.name === fo.name);
                     ok(u.id === newUser.id);
                     start();
@@ -227,7 +227,7 @@ asyncTest('New Google connect', function() {
         .then(function(newUser) {
             ok(Qwiery.isDefined(newUser.id));
             ok(Qwiery.isDefined(newUser.google));
-            ok(newUser.google.id === go.id.toString());
+            ok(newUser.google.id.toString() === go.id.toString());
             ok(newUser.google.name === go.name);
             start();
         });
@@ -320,4 +320,22 @@ asyncTest('No API key', function() {
             start();
         });
 
+});
+
+
+asyncTest('New Twitter connect', function() {
+
+    expect(4);
+    var fo = {
+        id: 9841354,
+        name: "Akril"
+    };
+    $.when(Qwiery.connectTwitter(fo))
+        .then(function(newUser) {
+            ok(Qwiery.isDefined(newUser.id));
+            ok(Qwiery.isDefined(newUser.twitter));
+            ok(newUser.twitter.id.toString() === fo.id.toString());
+            ok(newUser.twitter.name === fo.name);
+            start();
+        });
 });

@@ -2,8 +2,6 @@
 
 This is the JavaScript SDK to access, manage and consume the Qwiery services. 
 
-
-
 Use this SDK for your browser applications, it's as simple as this:
 
     Qwiery.apiKey = "Anonymous";
